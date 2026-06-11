@@ -1,0 +1,20 @@
+name: SimplyDupe
+description: $description
+version: '${version}'
+
+main: me.tiger.simplydupe.SimplyDupe
+api-version: '26.1.2'
+load: POSTWORLD
+
+authors: [ 2b2t_names ]
+
+commands:
+  dupe:
+    description: Duplicate one copy of the item in your main hand.
+    usage: /dupe
+    permission: simplydupe.dupe
+
+permissions:
+  simplydupe.dupe:
+    description: Allows using /dupe.
+    default: op
