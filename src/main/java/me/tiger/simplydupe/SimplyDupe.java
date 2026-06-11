@@ -1,6 +1,5 @@
 package me.tiger.simplydupe;
 
-import java.util.Locale;
 import java.util.Map;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -52,24 +51,23 @@ public final class SimplyDupe extends JavaPlugin implements CommandExecutor {
         }
 
         if (args.length != 0) {
-            player.sendMessage("Usage: /" + label);
+            player.sendMessage("/dupe");
             return true;
         }
 
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
         if (itemInHand.getType() == Material.AIR || itemInHand.getAmount() <= 0) {
-            player.sendMessage("Hold an item in your main hand first.");
+            player.sendMessage("You must hold an item to duplicate it.");
             return true;
         }
 
         ItemStack duplicate = itemInHand.clone();
-        duplicate.setAmount(1);
 
         Map<Integer, ItemStack> leftovers = player.getInventory().addItem(duplicate);
         dropLeftovers(player, leftovers);
         playSuccessEffect(player);
 
-        player.sendMessage("Duplicated one " + itemInHand.getType().name().toLowerCase(Locale.ROOT) + ".");
+        player.sendMessage("Duplicated item.");
         return true;
     }
 

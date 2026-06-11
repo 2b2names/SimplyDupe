@@ -3,7 +3,7 @@ description: $description
 version: '${version}'
 
 main: me.tiger.simplydupe.SimplyDupe
-api-version: '26.1.2'
+api-version: '1.21'
 load: POSTWORLD
 
 authors: [ 2b2t_names ]
